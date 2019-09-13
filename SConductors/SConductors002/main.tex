@@ -1,0 +1,214 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 14pt, russian]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{amssymb, amsmath}
+
+\title{Теория Сверхпроводимости. Феноменологическая теория.}
+\author{Курин}
+\date{}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+\newcommand{\pa}{\partial}
+\newcommand{\rot}{\textbf{rot}~}
+\renewcommand{\div}{\textbf{div}~}
+\renewcommand{\grad}{\textbf{grad}~}
+
+\begin{document}
+	\maketitle
+
+	
+
+	\section{Элементарная электродинамика}
+
+	Пусть есть сверхпроводник и есть два магнитных поля 
+	$\vec{B}_e,~\vec{B}_i$ - внешнее и внутренее. Эффект 
+	Мейснера заключается в том, что $\vec{B}_i = 0$.
+	
+	А ещё этот эффект наблюдается только в определёънной 
+	области $B,T$:
+
+	%img001
+
+	Если мы применим теорему Гаусса:
+	\be
+		\div \vec B = 0 \rightarrow \vec{B}_{i,n} = \vec{B}_{e,n} = 0;
+	\ee
+
+	%img002
+
+	Из этого следует, что есть поверхностный ток:
+	\be
+		j_y = \frac{c}{4\pi} B_{e,x};
+	\ee
+
+	А в векторной записи:
+	\be
+		\vec{j}_{sur} = \frac{c}{4\pi} [\vec n \times \vec{B}_e];
+	\ee
+
+	А ток объёмный связан с этим:
+	\be
+		\vec{j}_{sur} = \int_{-\infty}^{0} \vec j  dz;
+	\ee
+
+	То есть у нас есть скин эффект, даже при нулевой частоте, чего 
+	в нормальных проводниках нет. Только называется это глубиной проникновения:
+	\be
+		\lambda \sim 10 \hdots 200~nm;
+	\ee
+
+	Обычно это считают $\delta$ функцией. Примерно это выглядит так:
+	%img003
+
+	Почему у нас магнитное поле спадает так же как и ток? Потому что 
+	уравнения Максвелла:
+	\be
+		\rot \vec B = \frac{4\pi}{c} \vec j;
+	\ee
+
+	Что у нас получается? 
+	\be
+		\pa_z B_x = \frac{4\pi}{c} \vec j;
+	\ee
+
+	Но ещё у нас есть сила Лоренца:
+	\be
+		\vec f = \frac{1}{c} [\vec j \times \vec B];
+	\ee
+
+	В нашем случае это превратится в :
+	\be
+		f_z = - \frac{1}{4\pi} \pa_z B_x \cdot B_x
+	\ee
+
+	Если мы проинтегрируем силу, то получим давление:
+	\be
+		\vec{f}_{sur} = - \vec n \frac{B_e^2}{8\pi};
+	\ee
+
+	Какие законы сохранения?
+	\be
+		\pa_t \rho + \div \vec j = 0;
+	\ee
+	\be
+		\pa_t W + \div \vec S = 0;
+	\ee
+
+	- Заряда и Энергии. Но можно написать и для импульса
+	при помощи тензора натяжений:
+	\be
+		\pa_t \vec p + \div \hat T = 0;
+	\ee
+
+	А сам тензор натяжений:
+	\be
+		T_{ik} = \frac{1}{8\pi} (B_i B_k - \frac{1}{2} S_{ik} B^2);
+	\ee
+
+	Как обычно проводится эксперимент?
+	%img004
+
+	Напишем уравнение максвелла. но учтем, что есть
+	2 тока - внешний и скин-тое. Тогда:
+	\be
+		\rot \vec B = \frac{4\pi}{c} \vec j = \frac{4\pi}{c}(\vec{j}_e + \vec{j}_i)'
+	\ee
+
+	Но тогда через намагниченность $\vec H = \vec B  - 4\pi \vec M$:
+	\be
+		\vec{j}_i = c \rot \vec M;
+	\ee
+
+	При этом стоит заметить, что:
+	\be
+		\div \vec H = - 4\pi \div \vec M \neq 0;
+	\ee
+
+	А вот вне образца у нас потенциальное магнитное поле
+	в силу того, что $\rot \vec H  = 0$:
+	\be
+		\vec H = - \grad \psi;
+	\ee
+
+	%img005
+
+	У нас сверхпроводник - идеальный диамагнетик - $\mu = 0$.
+	Отсюда у нас условие:
+	\bea
+		\Delta \Psi = 0;\\
+		\psi_e\rvert_s = \psi_i \rvert_s;\\
+		\mu_e \pa_n \psi_e = \mu_i \psi_i = 0;
+	\eea
+
+	Тогда тангенциальная компонента поля на границе непрерывна.
+	%img007
+
+	Тогда у нас получается что-то вроде магнитного заряда.
+	Его поле будет:
+	\be
+		\vec B = \vec{r} \frac{q}{r^3};
+	\ee
+
+	Есть еще 2 задачи:
+	%img008
+
+	\section{Термодинамика сверхпроводников}
+	
+	Здесь вводится понятие энтропии $S$, которая
+	увеличивается $\delta S \geq 0$. Как с этим работать? 
+	Пусть у нас есть коробка с двумя газами:
+	%img009
+	
+	А как себя будет вести энтропия? 
+	$S_1(E_1,V_1,N_1),~S_2(E_2,V_2,N_2)$ И силы между газами
+	должны быть короткодействующими. В силу аддитивности:
+	\bea
+		S = S_1 + S_2;\\
+		E = E_1 + E_2;
+	\eea
+
+	Но тогда получим:
+	\bea
+		\pa_{E_1} S = \pa_{E_1} S_1 + \pa_{E_1} S_2 = \pa_{E_1} S_1 + \pa_{E_2} S_2 = 0;
+	\eea
+
+	Но в силу $\delta Q = T \delta S$ получим:
+	\be
+		\pa_{E_1} S = \frac{1}{T_1} - \frac{1}{T_2} = 0;
+	\ee
+
+	Отсюда следует равенство температур. Из соотношения 
+	$\delta E = T \delta S - p\delta V$. Тогда механическое 
+	равновесие:
+	\be
+		\pa_{V_1}  S = \frac{p_1}{T_1}  - \frac{p_2}{T_2} = 0;
+	\ee
+
+	Аналогично химическое равновесие:
+	\be
+		\pa_{N_1}  S = \frac{\mu_1}{T_1}  - \frac{\mu_2}{T_2} = 0;
+	\ee
+
+	Можно менять перменнные в потенциалах при помощи 
+	преобразований лежандра:
+	\be
+		\delta E = T \delta S - p \delta V + S \delta T - S \delta T; 
+	\ee
+
+	Тогда переходим к свободной энергии:
+	\be
+		\delta F  = \delta(E - TS) = - S \delta T - p \delta V;
+	\ee
+
+\end{document}
