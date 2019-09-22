@@ -1,0 +1,221 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 14pt, russian]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{amssymb, amsmath}
+
+\title{Теория Сверхпроводимости. Феноменологическая теория.}
+\author{Курин}
+\date{}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+\newcommand{\pa}{\partial}
+\newcommand{\rot}{\textbf{rot}~}
+\renewcommand{\div}{\textbf{div}~}
+\renewcommand{\grad}{\textbf{grad}~}
+
+\begin{document}
+	\maketitle
+
+	\section{Элементарная термодинамика сверхпроводников}
+
+	Что происходит если провести замену? $S \rightarrow T$:
+	\be
+		\delta E (S, V, N)= T \delta S - p \delta V + \mu \delta N;
+	\ee
+
+	А можно и обратную замену:
+	\be
+		\delta F(T, V, N) = \delta (E - TS) = - SW \delta T - p \delta V + \mu \delta N; 
+	\ee
+
+	Энергия это $E = F + TS$, но тогда:
+	\be
+		E = F - T \pa_T \delta F; 
+	\ee
+
+	И тогда для равновесных процессов $\delta S \ge 0$ - второе начало термодинамикаи для
+	закрытых систем. А для открытых можно написать:
+	\be
+		T \delta S - \delta Q \ge 0;
+	\ee
+
+	Можно написать и уравнение во времени:
+	\be
+		\frac{d E}{dt} = \frac{\pa E}{\pa t} - T \frac{\pa S}{\pa T} = \frac{\pa Q - T \pa S}{\pa t} \le 0;
+	\ee
+
+	Чем отличаются экстенсивные и интенсивные переменные? Экстенсивные расширяются с увеличением
+	куска вещества. Примеры: $V, S, N$. А есть и интенсивные - они не увеличиваются:
+	$T, \mu, P$.
+
+	Тогда можно написать, например:
+	\be
+		E = V \varepsilon(S / V, N / V);
+	\ee
+
+	Мы можем легко написать уравнения состояний: $p(n,T),~\varepsilon(n,T)$. 
+	И если мы просто пользуемся термодинамикой, то мы никогда не напишем ничего,
+	противоречащего первому закону.
+
+	Нарисуем диаграмму Мейснера:
+
+	%img001
+
+	А вся система выглядит как:
+
+	%img002
+
+	И можем написать закон индукции:
+	\be
+		\rot \vec E = - \frac{1}{c} \frac{\pa B}{\pa t};
+	\ee
+
+	Тогда ЭДС получится:
+	\be
+		\varepsilon = \frac{\pa \Phi_{B}}{\pa t};
+	\ee
+
+	Мы хотим что-то сказать об этой кривой из этого. 
+	Если мы охладили нечто ниже критической температуры, то 
+	поток скачком уменьшится почти до нуля. Но еще и 
+	произойдет сжатие магнитного поля. 
+
+	Тогда у нас будет энергия уже в более сложной форме $E(S,V,N, \vec B)$.
+	Для того, чтобы этот потенциал найтит, мы должны написать:
+	\be
+		\delta E = T \delta S + \delta A + \mu \delta N;
+	\ee
+
+	А чему у нас равна работа? Если у нас твердое тело, то 
+	у нас есть еще и тангенциальные напряжения. Тогда работа запишется как:
+	\be
+		\delta A = \sum_{ik} \sigma_{ik} \delta u_{ik};
+	\ee
+
+	А наша система =  сверхпроводник + поле. А вот катушку будем считать 
+	внешней средой. Работу над током мы можем найти как:
+	\be
+		\delta A = - \delta t\int_V (\vec j; \vec E) d V;
+	\ee
+
+	Введем поле $H$:
+	\be
+		\rot \vec B = \frac{4\pi}{c} (\vec j + \vec{j}_i);
+	\ee
+
+	При этом у нас $B = H + 4\pi M$:
+	\be
+		\rot \vec H = \frac{4\pi}{c} \vec j;
+	\ee
+
+	Тогда у нас получится:
+	\be
+		\delta A = - \delta t \int (\rot \vec H; \vec E) dV;
+	\ee
+
+	Но вспомним:
+	\be
+		\div [\vec a \times \vec b] = \vec b \cdot \rot \vec a - \vec a \cdot \rot \vec b;
+	\ee
+
+	С уётом этого можно получить:ё
+	\be
+		\delta a = - \delta t \frac{c}{4\pi} \left(\div [\vec H \times \vec E] 
+		+ \vec H \times \rot \vec E\right) = 
+		- \delta t \frac{c}{4\pi} \left(\div [\vec H \times \vec E]
+		- \frac{1}{c} \vec H \frac{\pa \vec B}{\pa t}\right);
+	\ee
+
+	Тогда работа электромагнитного поля составит:
+	\be
+		\delta A_{em} =  \frac{1}{4\pi} \int H \delta B d V + 
+		\frac{c\delta t}{4\pi} \int [\vec E \times \vec H] dS;
+	\ee
+
+	На самом деле мы не совсем честно это написали. Мы забыли в
+	уравнении Максвелла член вида $\frac{1}{c} \frac{\pa \vec E}{\pa t}$.
+
+	Мы им можем пренебречь в случае квазистатики. Для этого надо
+	$B/L \gg E /(c T)$. Если это так можем написать:
+	\be
+		\delta E = T \delta S - p \delta V + \mu \delta N + 
+			\frac{1}{4\pi} \int \vec H \cdot \delta \vec B dV;
+	\ee
+
+	Все вместе это нейкий функционал. Нечто от бесконечного числа переменных.
+	Напишем для магнитной индукции:
+	\be
+		\vec H = 4\pi \frac{\delta E}{\delta \vec B}
+	\ee
+
+	Если у нас есть функционал:
+	\be
+		F = \int K(x, x') f(x') dx';
+	\ee
+
+	Тогда его вариация:
+	\be
+		\delta F = \int K(x, x') \delta f (x') dx;
+	\ee
+
+	А его вариационная производная:
+	\be
+		\frac{\delta F}{\delta f} = K(x, x');
+	\ee
+
+	Например в класссической механике есть вариационный принцип:
+	\be
+		S = \int dt L(q, \dot q);
+	\ee
+
+	Тогда его полная вариация:
+	\be
+		\delta S = \int ()\pa_q L \delta q - \delta \dot q \frac{d}{dt} \pa_{\dot q} L) dt;
+	\ee
+
+	И отсюда получим необходимость выполнения уравнения Лагранжа-Эйлера.
+
+	Напишем модифицированную свободную энергию $\tilde{F}(T,V,N, \vec H)$, тогда
+	её вариация:
+	\be
+		\delta F = - S \delta T + p \delta V + \frac{1}{4\pi} \int \vec H \delta \vec B dV;
+	\ee
+
+	Добюавив полнубю производную получим:
+	\be
+		\delta (F  - \frac{1}{4\pi} \int \vec B \vec H d V) = \delta \tilde{F} = - S \delta T - p \delta V - \frac{1}{4\pi} \vec B \delta \vec H dV;
+	\ee
+
+	Почему это удобно? Потому что эксперимент проходитт так - мы знаем внешнеее поле.
+
+	Тогда если в начале было $\tilde{F} = F_s$, то после манипуляций получи м:
+	\be
+		\delta \tilde{F} = \delta F_s - \frac{1}{4\pi} \int \vec B \delta \vec H dV;
+	\ee
+
+	Внутренний интеграл занулится, а вот снаружи оставнется:
+	\be
+		\delta \tilde{F} = \delta F_s - \frac{1}{4\pi} \int_{V_e} \vec H \delta H dV;
+	\ee
+
+	Тоггда у нас получится:
+	\be
+		\tilde F = F_s - \int_{V_e} \frac{H^2}{8 \pi} dV;
+	\ee
+
+	В таком случае изменив начало отсчета у нас будет:
+	\be
+		\tilde F = F_s + \int_{V_s} \frac{H^2}{8\pi} dV;
+	\ee
+\end{document}
