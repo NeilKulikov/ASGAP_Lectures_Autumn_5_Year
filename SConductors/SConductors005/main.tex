@@ -1,0 +1,184 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 14pt, russian]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{amssymb, amsmath}
+
+\title{Теория Сверхпроводимости. Феноменологическая теория.}
+\author{Курин}
+\date{}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+\newcommand{\pa}{\partial}
+\newcommand{\rot}{\textbf{rot}~}
+\renewcommand{\div}{\textbf{div}~}
+\renewcommand{\grad}{\textbf{grad}~}
+
+\begin{document}
+	\maketitle
+
+	\section{Развитие термодинамического мышления}
+
+	Мы рассматривали уравнение Лондонов. Мы написали:
+	\be
+		F = F_0(T,V) + \frac{1}{8\pi} \int \big(\vec{B}^2 + \lambda^2 (\rot \vec B)^2\big)dV;
+	\ee
+
+	При этом толщина скин-слоя:
+	\be
+		\lambda^{-2} = \frac{4\pi e^2 n_S}{m};
+	\ee
+
+	Тогда варьируя можем получить магнитное поле:
+	\be
+		\delta F = \int \frac{\delta F}{\delta \vec B} \delta \vec B dV;
+	\ee
+
+	В нашем случае получится:
+	\be
+		\delta F = \frac{1}{4\pi} \int \big(\vec B \delta \vec B + 
+			\lambda^2 \rot \vec B \rot \delta \vec B\big) dV;
+	\ee
+
+	Можем воспользоваться свойством:
+	\be
+		\div [\vec a \times \vec B] = \vec B \rot \vec a + \vec a \rot \vec b;
+	\ee
+
+	В таком случае выйдет:
+	\be
+		\rot \vec B \rot \delta \vec B  = \delta B \rot \rot \vec B 
+			- \div [\rot \vec B \times \delta \vec B ];
+	\ee
+
+	Отсюда получим вариационную производную:
+	\be
+		\frac{\delta F}{\delta \vec B} = \frac{1}{4\pi} 
+			(\vec B + \lambda^2 \rot \rot \vec B) = 0;
+	\ee
+
+	Если введем лапласиан вектора, как:
+	\be
+				\rot \rot \vec B = \grad \div \vec B - \Delta \vec B;
+			\ee
+
+			Такой лапласиан удобен в декартовой системе координат.
+
+			В силу $\div \vec B  = 0$ получим:
+			\be
+				\Delta \vec B - \frac{1}{\lambda^2} \vec B = 0;
+			\ee
+
+	Рассмотрим 3 задачи:
+	\begin{itemize}
+		\item Представим полупространство, наполовину заполненное сверхпроводником:
+				%img001
+
+			Тогда уравнение Лондонов превратится:
+			\be
+				\pa^2_{xx} B_z - \frac{1}{\lambda^2} B_z = 0;
+			\ee 
+
+			Тогда решение - спадающая экспонента.
+			
+			В СИ у нас уравнения:
+			\begin{eqnarray}
+				\rot H = j + \pa_t P;
+				\rot E = - \pa_t B;
+				B = \mu_0 H;
+				D = \epsilon_0 \vec E;
+			\end{eqnarray}
+
+		\item  А если у нас сверхпроводящая пленка $-d/2,~d/2$ в вакууме.
+				Для $B_z$ то же самое уравнение. Тогда:
+				\be
+					B_z = c_1 \cosh \frac{x}{\lambda} + c_2 \sinh \frac{x}{\lambda};
+				\ee
+
+				В силу четнорсти граничных условий:
+				\be
+					B_0 =c_1 \cosh \frac{d}{2\lambda};
+				\ee 
+
+				Отсюда:
+				\be
+					B_z = B_0 \frac{\cosh \frac{x}{\lambda}}{\cosh \frac{d}{2\lambda}};
+				\ee
+
+
+			\item А если про пленке течет ток?
+				У нас будет скачок $2B_i = \frac{4\pi}{c} I$.
+
+				Тогда поле в итоге:
+				\be
+					B = B_I \frac{\sinh \frac{x}{\lambda}}{\sinh \frac{d}{2\lambda}};
+				\ee
+
+	\end{itemize}
+
+
+	\section{Динамический вывод уравнения Лондонов или двухжидкостная гидродинамика.}
+
+		Можно представить что есть две жидкости - нормальная и аномальная. 
+		Пусть есть 2-е концентрации $n_{N,S}, \vec{v}_{N,S}$. Тогда законы:
+		\be
+			\pa_t n_{N,S} + \div \vec{v}_{N,S} n_{N,S} = 0;
+		\ee
+
+		\be
+			mn_{N,S}\big(\pa_t \vec{v}_{N,S} + (\vec{v}_{N,S},\nabla)\vec{v}_{N,S}\big) + \nabla p_{N,S} = 
+				- e n_s \big(\vec E + \frac{1}{c} [\vec{v}_{N,S} \times \vec B]\big) + St;
+		\ee
+
+		Здесь столкновительный член зануляется для сверхпроводящих электронов6 а для обычных:
+		\be
+			St_{N} = mn_{N} v_N \nu;
+		\ee
+
+		Гидродинамическая скорость - усреднеена по объёму:
+		\be
+			\overline{v} = \frac{1}{V} \int \vec v d V;
+		\ee
+
+		Рассеяние в основном на дефектах решётки. Взаимное превращение может быть.
+		Но если скорости малы, то можно пренебречь. 
+
+		Здесь есть нелинейные члены. Но есть и член третьего порядка. Будем линеаризовать уравнения:
+		\begin{eqnarray}
+				n = n_0 + \delta n;\\
+				\vec v = \delta \vec v;
+		\end{eqnarray}
+
+		В результате получим:
+		\be
+			\pa_t \delta n + n_0 \div \delta \vec v = 0;
+		\ee
+
+		А закон сохранения импульса:
+		\be
+			mn_0 \pa_t \delta \vec v + \pa_n p \delta n = - e n \vec E - St;
+		\ee
+
+		Тогда получим:
+		\be
+			\pa_t v_n + c_n^2 \grad n_n = - \frac{e}{m} \vec E -  \nu \vec{v}_n;
+		\ee
+		\be
+			\pa_t v_s + c_s^2 \grad n_s = - \frac{e}{m} \vec E;
+		\ee
+
+		Здесь есть 2 типа движения: продольное и поперечное. Потенциальное и вихревое.
+
+		Рассмотрим случай падения S (TE) поляризации. У нас есть только $E_y(z,x)$. 
+		Его дивергенция равна нулю. Значит это вихревое поле. 
+\end{document}
