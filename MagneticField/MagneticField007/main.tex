@@ -1,0 +1,373 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 14pt, russian]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{amssymb, amsmath, amsfonts}
+
+\title{Физика магнитных явлений}
+\author{Иосиф Давидович Токман}
+\date{}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{equation}\begin{array}}
+\newcommand{\eea}{\end{array}\end{equation}}
+
+\newcommand{\pa}{\partial}
+\newcommand{\rot}{\textbf{rot}~}
+\renewcommand{\div}{\textbf{div}~}
+\renewcommand{\grad}{\textbf{grad}~}
+
+\setcounter{section}{13}
+
+\begin{document}
+	\maketitle
+
+	Мы от атомных систем ушли к твердому телу. Теперь стали рассматривать систему
+	спинов с обменным взаимодействием. Используем для этого гамильтониан Гейзенберга.
+	Мы хотим объяснить ферромагнетизм и антиферромагнетизм в первую очередь.
+
+	Можем рассмотреть отсутствие прямого взаимодействия спинов. Однако предположим,
+	что они создают общее среднее магнитное поле и взаимодействуют уже с ним.
+
+	Напрашивается соблазн использовать гамильтониан для диполя во внешнем поле:
+	\be
+		\hat H = - \hat{\vec P} \vec E;
+	\ee
+
+	В классической физикее показывается, что электрические диполи во внешнем 
+	поле начинают колебаться вокруг направления поля. А магнитные диполи будут двигаться
+	по кругу относительно направления поля.
+
+	\begin{tcolorbox}
+		\textbf{Задача:} В чем отличие между поведениями магнитных и электрических диполей 
+		в однородном внешнем поле. При том, что гамильтонианы у них одинаковые.
+	\end{tcolorbox}
+
+	Дальше рассмотрим теорию среднего поля Вейса. Если система спинов находится 
+	во внешнем поле $\mathcal{H}_f$, то спин $i$ - ого атома находится в поле:
+	\be
+		\label{eq98}
+		\vec{\mathcal H}_f ' = \vec{\mathcal H}_f + \vec{\mathcal H}_{ef};
+	\ee
+
+	Если вспомнитт, что получали в парамагнетизме. То заменив реальное поле на модифицированное,
+	получим самосогласованное выражение - трансцендентное уравнение.
+	\be
+		\label{eq99}
+		\langle M_z \rangle  = N g_s \mu_B S B_s(x);
+	\ee
+
+	В данном случае:
+	\be
+		x = \frac{g_s \mu_B S(\mathcal{H}_{fz} + \gamma \langle M_z \rangle)}{T};
+	\ee
+
+	Это т.н. уравнение Кюри-Вейса. Дальше мы немнрого с ним поработаем. 
+	Рассмотрим предельные случаи:
+	\begin{itemize}
+		\item \textbf{Высокие температуры:} $x \ll 1$, получим:
+			\be
+				\langle M_z \rangle = \frac{N g_S^2 \mu_B^2 S(S+1)}{3T} 
+					(\mathcal{H}_{fz} + \gamma \langle M_z \rangle);
+			\ee
+
+			Разрешив его получим:
+			\be
+				\label{eq100}
+				\langle M_z \rangle = \frac{\frac{N g_S^2 \mu_B^2 S(S+1)}{3}}
+					{T - \frac{ZJ_0 S(S+1)}{3}} \mathcal{H}_{fz};
+			\ee
+
+			Здесь вводится величина - парамагнитная температура Кюри:
+			\be
+				\theta  = \frac{ZJ_0 S(S+1)}{3};
+			\ee
+
+			Соответствующая магнитная восприимчивость:
+			\be
+				\chi = \pa_{\mathcal{H}_{fz}} \langle M_z \rangle = 
+					\frac{\frac{N g_S^2 \mu_B^2 S(S+1)}{3}}{T-\theta};
+			\ee
+
+		\item \textbf{Спонтанная намагниченность:} Пусть внешнее поле отсутствует
+			$\mathcal{H}_{fz} = 0$, тогда можно написать:
+			\be
+				\label{eq101}
+				\langle M_z \rangle = Ng_S \mu_B S \Big(\frac{2S+1}{S+1}
+					\coth\big(\frac{2S+1}{2S} \frac{ZJ_0 S}{Ng_s\mu_B T} \langle M_z \rangle\big)
+					-\frac{1}{2S}\coth\big(\frac{1}{2S} \frac{ZJ_0 S}{Ng_s\mu_B T} \langle M_z \rangle\big)\Big);
+			\ee
+
+			Введем величину для оберазмеривания:
+			\be
+				y = \frac{\langle M_z \rangle}{Ng_s \mu_B};
+			\ee
+
+			Тогда подставляя увидим:
+			\be
+				y = \frac{2S+1}{2} \coth\big(\frac{2S+1}{2S}\frac{ZJ_0S}{T} y \big) -
+					\frac{1}{2} \coth\big(\frac{1}{2S} \frac{ZJ_0S}{T} y\big);
+			\ee
+
+			Это уравненеие имеет решение, если:
+			\be
+				\frac{2S+1}{2} \pa_y \coth\big(\frac{2S+1}{2S}\frac{ZJ_0S}{T} y \big) -
+					\frac{1}{2} \pa_y \coth\big(\frac{1}{2S} \frac{ZJ_0S}{T} y\big) \ge 1;
+			\ee
+
+			Условие превращается в:
+			\be
+				1 \le \frac{ZJ_0 S(S+1)}{3T};
+			\ee
+
+			Отсюда получается условие на критическую температуру:
+			\be
+				\label{eq102}
+				T \le T_c = \frac{ZJ_0 S(S+1)}{3};
+			\ee
+
+			Она характеризует, когда пропадёт средняя намагниченнность. В рамках 
+			теории среднего поля $T_c = \theta$. $Z$  - число соседей. Из этой
+			формулы например можно оценить интеграл взаимодействия.
+
+		\item \textbf{Низкие температуры:} Разложим всё, что уже получили 
+			при больших значениях $x$.
+			\be
+				\langle M_z \rangle = N g_s \mu_B S - N g_s \mu_B \cdot 
+					\exp(-\frac{ZJ_0S\langle M_z \rangle}{T N g_s \mu_B S});
+			\ee
+
+			Тогда можно упростить:
+			\be
+				\langle M_z \rangle \vert_{T=0}  \approx N g_S \mu_B S = M_0;
+			\ee
+
+			Подстав
+			\be
+				\label{eq103}
+				\langle M_z \rangle = M_0 \big(1 - \frac{1}{S} \exp( -\frac{3}{S+1} \frac{T_c}{T})\big);
+			\ee
+
+			Уравнение \ref{eq103} показывает, что насыщение достигается только при нулевой 
+			температуре, однако сама эта зависимость не соответствует точному решению для 
+			гамильтониана Гейзенберга.
+		\item \textbf{Намагниченность при температуре Кюри:} Разложение $B_s(x),~x \ll 1$.
+			\be
+				B_s\big(\frac{\langle M_z \rangle}{Ng_S \mu_B} \frac{ZJ_0 S}{T}\big) \approx
+					\frac{(2S+1)^2 - 1}{4S^2} \frac{ZJ_0 S}{3T} \frac{\langle M_z\rangle}{Ng_S \mu_B}
+					- \frac{(2S+1)^4 - 1}{16 S^3} \frac{1}{45} 
+					\big(\frac{ZJ_0 S}{T}\frac{\langle M_z \rangle}{N g_s \mu_B}\big)^3 = \alpha;
+			\ee
+
+			Используя это разложение и уравнение \ref{eq101} при $T \sim T_c$ мы имеем:
+			\be
+				\label{eq104}
+				\alpha \approx \frac{\langle M_z \rangle}{N g_s \mu_B S} 
+					\approx \sqrt{\frac{10}{3} \frac{(S+1)^2}{(S+1)^2 + S^2}} \sqrt{\frac{T_c - T}{T}};
+			\ee
+			
+			Это неплохо согласуется с экспериментом, но не с каждым.
+	\end{itemize}
+
+	Если мы смотрим за движением атома в классической физикее
+	внутри твердого тела - получим модель грузиков на пружинках.
+	Но в такой структуре возможны и волны - акустические и оптические.
+
+	Пусть вначале спины торчат в одну сторону. И можно полагать, что 
+	после возбуждения они будут прецессировать.
+
+	\section{Динамика магнитной решетки ферромагнетика с обменным взаимодействием.}
+
+	Рассмотрим \textbf{линейную} цепочку из спинов. Пусть система изолированна и находится
+	в состоянии, когда все спины, которые рассматриваются как вектора, сонаправленны и 
+	неподвижны.
+
+	Вместо Гамильтониана Гейзенберга будем иметь:
+	\be
+		\label{eq105}
+		H_{ex} = - \frac{1}{2} \sum_{i \neq j} J_{ij} \vec{S}_i \vec{S}_j;
+	\ee 
+
+	Соответствующее  механическое уравнение движения в формализме скобок Пуассона
+	будет:
+	\be
+		\label{eq106}
+		\dot{\vec S}_i = [H_{ex}; \vec{S}_i];
+	\ee
+
+	Поскольку скобки пуассона для компонент механического момента:
+	\be
+		[M_\alpha;M_\beta] = - M_\gamma;
+	\ee
+
+	Где $\alpha,~\beta,~\gamma$ - соответствуют $x,~y,~z$ с циклическими
+	перестановками.
+
+	Тогда по аналогии мы должны получить такие же скобки Пуассона
+	для спинов -  в силу соответствия скобок Пуассона и коммутаторов,
+	и спинов и момента.
+	\be
+		\label{eq107}
+		[S_\alpha;S_\beta] = - \frac{1}{\hbar} S_\gamma;
+	\ee
+
+	Будем считать, что ось OX направленна вдоль цепочки,
+	а в равновесном состоянии все спины напроавленны по оси OZ.
+	Ограничиваясь взаимодейсьвием лишь с ближайшими соседями, получим:
+	\be
+		\label{eq108}
+		\dot{S}_{ix} = \frac{1}{\hbar} J S_{iy} S_{(i+1)z} + \frac{1}{\hbar} J S_{iy} S_{(i-1)z} 
+			- \frac{1}{\hbar} J S_{iz} S_{(i+1)y} - \frac{1}{\hbar} J S_{iz} S_{(i-1)y};
+	\ee
+
+	Аналогично и для других компонент:
+	\be
+		\dot{S}_{iy} = \frac{1}{\hbar} J S_{iz} S_{(i+1)x} + \frac{1}{\hbar} J S_{iz} S_{(i-1)x} 
+			- \frac{1}{\hbar} J S_{ix} S_{(i+1)z} - \frac{1}{\hbar} J S_{ix} S_{(i-1)z};
+	\ee
+	\be
+		\dot{S}_{iz} = \frac{1}{\hbar} J S_{ix} S_{(i+1)y} + \frac{1}{\hbar} J S_{ix} S_{(i-1)y} 
+			- \frac{1}{\hbar} J S_{iy} S_{(i+1)x} - \frac{1}{\hbar} J S_{iy} S_{(i-1)x};
+	\ee
+
+	Дальше можно всё это линеаризовать. Будем искать решение 
+	этого уравнения, соответствующее малому отклонению от основного
+	состояния:
+	\be
+		S_z^0 = S_0,~S_y^0 = S_z^0 = 0;
+	\ee
+
+	Тогда полный спин:
+	\be
+		\vec S = \vec{S}^0 + \vec \sigma;
+	\ee
+
+	Тогда получим:
+	\be
+		\label{eq110}
+		S_x = \sigma_x,~S_y = \sigma_y,~S_z = S_0;
+	\ee
+
+	Разложим в ряд Фурье, введем явную зависимость:
+	\be
+		\label{eq111}
+		\sigma_{mx}(t) = \frac{1}{\sqrt N} \sum_k\sigma_x (k, t) e^{ikma}; 
+	\ee
+
+	Здесь $a$ - расстояние между спинами, $k$ - проекция волнового 
+	вектора на ось OX. Используя \ref{eq110}, \ref{eq111}, из \ref{eq108}
+	получаем:
+	\be
+		\label{eq112}
+		\dot{\sigma}_x (k,t) = \frac{2S_0 J}{\hbar} (1 - \cos(ka)) \sigma_y(k,t);
+	\ee
+	\be
+		\dot{\sigma}_y (k,t) =  - \frac{2S_0 J}{\hbar} (1 - \cos(ka)) \sigma_x(k,t);
+	\ee
+
+	Решение \ref{112} будем искать в  виде:
+	\be
+		\label{eq113}
+		\sigma_x(k,t) = \sigma_x(k,\omega_k) e^{-i \omega_k t};
+	\ee
+
+	Из этого мы имеем однородную систему алгебраических уравнений:
+	\be
+		\label{eq114}
+		- i \omega_k {\sigma}_x (k,\omega_k) = \frac{2S_0 J}{\hbar} (1 - \cos(ka)) \sigma_y(k,\omega_k);
+	\ee
+	\be
+		- i \omega_k {\sigma}_y (k,\omega_k) =  - \frac{2S_0 J}{\hbar} (1 - \cos(ka)) \sigma_x(k,\omega_k);
+	\ee
+
+	Решение уравнение на детерминант:
+	\be
+		\label{eq115}
+		\omega_k^2 = \big(\frac{2JS_0}{\hbar} (1 - \cos ka)\big)^2;
+	\ee
+
+	И получится два вида связи:
+	\be
+		\label{eq116}
+		\sigma_y(k, \omega) = \pm i \sigma_x(k,\omega);
+	\ee
+
+	Это какие-то спиновые волны. Рассмотрим волну, распространяющуюся в
+	положительном направлении оси OX. Тогда:
+	\be
+		\label{eq117}
+		S_x(\omega_k, k, t) = \frac{1}{2} \big(\sigma_0 (\omega_k, k) 
+			e^{-i(\omega_k t - kx)} + \sigma_0 (-\omega_k, -k) 
+			e^{i(\omega_k t - kx)}\big);
+	\ee
+	\be
+		S_x(\omega_k, k, t) = \frac{1}{2} \big(-i\sigma_0 (\omega_k, k) 
+			e^{-i(\omega_k t - kx)} + i \sigma_0 (-\omega_k, -k) 
+			e^{i(\omega_k t - kx)}\big);
+	\ee
+
+	Здесь мы считаем $\omega_k > 0,~k > 0$, и, поскольку
+	все величины действительны:
+	\be
+		\sigma_0(\omega_k, k) = \sigma_0^{*}(-\omega_k, -k) = \sigma_0 e^{i\phi_k};
+	\ee
+
+	Из уравнения \ref{eq117} будем иметь:
+	\be
+		\label{eq118}
+		S_x = \sigma_0 \cos(\omega_k t - kx - \phi_k);
+	\ee
+	\be
+		S_y = \sigma_0 \sin(\omega_k t - kx - \phi_k);
+	\ee
+
+	Можно видеть, что найденное решение описывает по цепочке
+	спинов неоднородной прецессии спинов относительно 
+	исходного положения. Такая волна называется спиновой волной.
+
+	А что будет, если мы заменим время на обратное. Получим ли возможный
+	процесс? При такой замене спины должны заменить на обратные, поскольку 
+	испулься сменяются на обратные, а в моменте линейно входит импульс.
+
+	При достаточно малых волновых числах $ka \ll 1$, то получим:
+	\be
+		\label{eq119}
+		\omega \approx \big(\frac{S_0 J a}{\hbar}\big) k^2; 
+	\ee
+
+	В этом смысле это практически классическая частица ( в силу квадратичности закона дисперсии).
+	В ряде случаев при изучении таких волн в магнетиках можно перейти к приближению
+	\textit{сплошной среды}. В этом приближении обменная энергия, определяемая гамильтонианом
+	Гейзенберга, определяемая при взаимоджействии с ближайшими соседями принимает такой вид 
+	($\alpha$ - направляющие косинусы):
+	\be
+		H_{ex} = - \frac{1}{2} \sum_{i \neq j} J_{ij} \vec{S}_i \vec{S}_j \approx
+			- J S_0^2 \sum_{i > j} \cos \phi_{ij} = - J S_0^2 \sum_{i > j}
+			()\alpha_{xi} \alpha_{xj} + \alpha_{yi} \alpha_{yj} + \alpha_{zi} \alpha_{zj});
+	\ee
+
+	В случае кубической решётки мы получаем:
+	\be
+		E_{ex} = \int_V \frac{JS_0^2}{2a} \sum_{i =1}^{3} (\grad \alpha_i)^2 d^3 r;
+	\ee
+
+	Тогда можем получить для кубических решёток:
+	\be
+		E_{ex} = \int_V A \sum_{i =1}^{3} (\grad \alpha_i)^2 d^3r;
+	\ee
+
+	Тогда плотность  обменной энергии:
+	\be
+		\epsilon_{ex} = A \sum_{i =1}^{3} (\grad \alpha_i)^2 d^3r;
+	\ee
+
+	Это всё, что можно вытащить из гамильтониана Гейзенберга при классическом подходе.
+\end{document}
