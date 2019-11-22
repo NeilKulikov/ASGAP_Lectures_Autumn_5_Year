@@ -1,0 +1,403 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 14pt, russian]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{amssymb, amsmath, amsfonts}
+
+\title{Физика магнитных явлений}
+\author{Иосиф Давидович Токман}
+\date{}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{equation}\begin{array}}
+\newcommand{\eea}{\end{array}\end{equation}}
+
+\newcommand{\pa}{\partial}
+\newcommand{\rot}{\textbf{rot}~}
+\renewcommand{\div}{\textbf{div}~}
+\renewcommand{\grad}{\textbf{grad}~}
+
+\setcounter{section}{14}
+
+\begin{document}
+	\maketitle
+
+	\section{Магнитооптика}
+
+	Взаимодействие электромагнитного поля с материей. Постоянные и переменные
+	поля в магнетике. 
+
+	Взаимодействие с зарядом (которые связаны с магнитным порядком) в твёрдом теле. 
+	Прежде чем углубляться в глубокие материи рассмотрим самое простое.
+
+	Рассмотрим следующую модель:
+	Некая среда - набор одинаковых заряженных осцилляторов. Осцилляторы с 
+	\textit{исчезающе малым затуханием}. На эту среду наложено
+	постоянное магнитное поле $\vec{\mathcal H}_0 \uparrow\uparrow OZ$.
+	Исследуем диэлектрические свойства такой среды 
+	в пренебрежении пространственной дисперсии. Декларация без точного
+	математиеского описания - бесполезна.
+
+	\be
+		\ddot x + \omega_0^2 x = \frac{e}{m} E_{0x} e^{-i\omega t} 
+				+ \frac{e{\mathcal H}_0}{mc} \dot y;
+	\ee
+	\be
+		\ddot y + \omega_0^2 y = \frac{e}{m} E_{0y} e^{-i\omega t} 
+				- \frac{e{\mathcal H}_0}{mc} \dot x;
+	\ee
+	\be
+		\ddot z + \omega_0^2 z = \frac{e}{m} E_{0} e^{-i\omega t};
+	\ee
+
+	Стационарное решение:
+	\be
+		x = \alpha_{xx} E_{0x} e^{-i\omega t} + \alpha_{xy} E_{0y} e^{-i\omega t};
+	\ee
+	\be
+		y = \alpha_{yy} E_{0y} e^{-i\omega t} + \alpha_{yx} E_{0x} e^{-i\omega t};
+	\ee
+	\be
+		z = \alpha_{zz} E_{0z} e^{-i\omega t};
+	\ee
+
+	Это решение на временах, много меньше времени затухания.  Рассмотрим
+	компоненты тензора поляризуемости.
+
+	\be
+		\alpha_{xx} = \alpha_{yy} = \frac{e}{m} \frac{(\omega_0^2 - \omega^2)}
+			{(\omega_0^2 - \omega^2)^2 - 4 \omega^2 \omega_0^2};
+	\ee
+	\be
+		\alpha_{xy} = - \alpha_{yx} = -i\frac{e}{m} \frac{2\omega \omega_L}
+			{(\omega_0^2 - \omega^2)^2 - 4 \omega^2 \omega_0^2};
+	\ee
+	\be
+		\alpha_{zz} = \frac{e}{m} \frac{1}{(\omega_0^2 - \omega^2)};
+	\ee
+
+	Соответствующий тензор диэлектрической проницаемости:
+	\be
+		\epsilon_{ij} = \delta_{ij} + 4\pi N \alpha_{ij};
+	\ee
+
+	Если записывать как матрицу:
+	\be
+		\hat{\epsilon} = 
+			\begin{bmatrix}
+				\frac{1}{2} (\epsilon_+ + \epsilon_-)	& \frac{i}{2} (\epsilon_+ - \epsilon_-)	& 0\\
+				-\frac{i}{2} (\epsilon_+ - \epsilon_-)	& \frac{1}{2} (\epsilon_+ + \epsilon_-) & 0\\
+				0 & 0 & \epsilon_0
+			\end{bmatrix};
+	\ee
+
+	Здесь подразумевается:
+	\be
+		\epsilon_\pm = 1 - \frac{\omega_p^2}{\omega(\omega \pm 2 \omega_L) - \omega^2};
+	\ee
+	\be
+		\epsilon_0 = 1 - \frac{\omega_p^2}{\omega^2 - \omega_0^2};
+	\ee
+
+	При этом: $\omega_L = \frac{e \mathcal{H}_0}{2mc},~\omega_p^2  = \frac{4\pi e^2 N}{m}$. Затухания нет - значит тензор эрмитов.
+
+	В чем разница между Ларморовской и гиро- частотой? Они отличаются в 2-а раза.
+
+	Рассмотренная модель соответствует гироэлектрической среде - наличию комлексных
+	недиагональных элементов тензора.
+
+	Какие собственные волны распространяются в такой среде?
+
+	Пусть волна распространяется по оси $Z$ - что дальше? Волна распадается
+	на собственные моды - циркулярно поляризованные. Это называется эффектом
+	Фарадея.
+
+	Ситуация была оень простая. А что может дать квантовая механика?
+	Можем полуить сам вид того самого тензора восприимивости.
+	Оказывается, то изменятся только числа. 
+
+	Наш же подход хорош простотой и сохранением симметрии. Выше была Рассмотренна ситуация, когда внешнее магнитное поле изменяет
+	диэлектриеские свойства среды. Аналогично можно рассмотреть ситуацию, когда магнитные свойства среды изменяются под действием внешнего магнитного поля.
+
+	Наверное существуют частоты, когда надо учитывать и магнитное поле волны.
+	Пусть среда - совокупность идентиных классических спинов во внешнем однородном
+	постоянном магнитном поле. В отсутствии других магнитных полей. Спины прецессируют
+	с бесконечно малым затуханием. Наложим однородное переменное магнитное поле. Тогда гамильтониан одного спина:
+	\be
+		\label{eq177}
+		\hat{H} = g \mu_B (S_z \mathcal{H}_0 + S_z \mathcal{H}_{0z} e^{-\omega t}
+			+ S_y \mathcal{H}_{0y} e^{-\omega t} + S_x \mathcal{H}_{0x} e^{-\omega t});
+	\ee
+
+	$\mathcal{H}_{0\alpha}$ - амплитуды переменного магнитного поля. $\omega$ - его частота.
+
+	Для магнитного момента одного спина $\vec M$ имеем:
+	\be
+		\label{eq178}
+		\hat{H} = - m_z (\mathcal{H}_0 + \mathcal{H}_{0z}e^{-i\omega t})
+		- m_x \mathcal{H}_{0x}e^{-i\omega t} - m_z \mathcal{H}_{0y}e^{-i\omega t};
+	\ee
+
+	Воспользуемся тем, что мы уже писали для классиеской цепочки спинов.
+	\be
+		[m_\alpha; m_\beta] = \frac{g\mu_B}{\hbar} m_\gamma = 
+			\frac{g\abs{e}}{2mc} m_\gamma = \zeta m_\gamma;
+	\ee
+
+	Тогда мы имеем уравнение движения. Из него мы собираемся получить уравнение связи.
+	Нам это важно, тобы совать в уравнения для полей.
+	\be
+		\label{eq180}
+		\dot{m}_x = -(\mathcal{H}_0 + \mathcal{H}_{0z}e^{-i\omega t}) \zeta m_y 
+			+ \mathcal{H}_{0y}e^{-i\omega t} \zeta m_z;
+	\ee
+	\be
+		\dot{m}_y = -(\mathcal{H}_0 + \mathcal{H}_{0z}e^{-i\omega t}) \zeta m_x 
+			+ \mathcal{H}_{0x}e^{-i\omega t} \zeta m_z;
+	\ee
+	\be
+		\dot{m}_z =
+			\mathcal{H}_{0x}e^{-i\omega t} \zeta m_y - \mathcal{H}_{0y}e^{-i\omega t} \zeta m_x;
+	\ee
+
+	Будем считать, что $\mathcal{H}_{0z} \ll \mathcal{H}_0$. Кроме того 
+	будем считать $m_z \approx m_0$, а также $\Delta m_z \ll m_x,~m_y \ll m_0$.
+
+	Тогда в линейном приближении будем иметь ($\omega_0 = \zeta \mathcal{H}_0$ - частота однородной прецессии):
+	\be
+		\label{eq181}
+		\dot{m}_x = - \omega_0 m_y + \zeta \mathcal{H}_{0y} m_0 e^{-i\omega t};
+	\ee
+	\be
+		\dot{m}_y = \omega_0 m_x - \zeta \mathcal{H}_{0x} m_0 e^{-i\omega t};
+	\ee
+	\be
+		\Delta \dot{m}_z = 0;
+	\ee
+
+	Стационарное решение выглядит так:
+	\be
+			m_x = \frac{\zeta m_0 \omega_0}{\omega_0^2 - \omega^2} 
+				\mathcal{H}_{0x} e^{-i\omega t} - i 
+				\frac{\zeta m_0 \omega}{\omega_0^2 - \omega^2} 
+				\mathcal{H}_{0y} e^{-i\omega t};
+	\ee
+	\be
+			m_y = \frac{\zeta m_0 \omega_0}{\omega_0^2 - \omega^2} 
+				\mathcal{H}_{0y} e^{-i\omega t} + i 
+				\frac{\zeta m_0 \omega}{\omega_0^2 - \omega^2} 
+				\mathcal{H}_{0x} e^{-i\omega t};
+	\ee
+
+	Тогда для одного атома будем иметь:
+	\be
+		\chi_{xx} = \chi_{yy} = \frac{\zeta m_0 \omega_0}{\omega_0^2 - \omega^2};
+	\ee
+	\be
+		\chi_{xy} = -\chi_{yx} = -i \frac{\zeta m_0 \omega}{\omega_0^2 - \omega^2};
+	\ee
+
+	В таком случае тензор магнитной проницаемости будет таким:
+	\be
+		\label{eq182}
+		\hat{\mu} = 
+			\begin{bmatrix}
+				1 + \frac{4\pi N \zeta m_0 \omega_0}{\omega_0^2 - \omega^2 }
+				& 
+				-i \frac{4 \pi N \zeta m_0 \omega}{\omega_0^2 - \omega^2}
+				&
+				0\\
+				i \frac{4 \pi N \zeta m_0 \omega}{\omega_0^2 - \omega^2}
+				&
+				1 + \frac{4\pi N \zeta m_0 \omega_0}{\omega_0^2 - \omega^2 }
+				& 
+				0\\
+				0 & 0 & 1
+			\end{bmatrix};
+	\ee
+
+	Эта модель соответствует гиромагнитной среде - наличие комплексной 
+	недиагональной компоненты в тензоре магнитной проницаемости.
+
+	Какие будут собственные волны? Что с ними будет происходить?
+
+
+	В реальности что из этого срабатывает - гироэлектриеские эффекты или
+	гиромагнитные?
+
+	На самом деле - и то и другое. А характерное поведение зависит 
+	в основном от частоты.
+
+	Теперь попробуем рассмотреть то же самое в простой квантовомеханической 
+	модели.
+	
+	\section{Магнитооптика в ферромагнитной среде.}
+
+	Рассмотрим в качестве модели гипотетический магнитоактивный атом, который устрен 
+	следуюзим образом - у группы электронов этого атома отличен от нудя полный спин,
+	но равен нулю полный орбитальный момент.
+	
+	С этой группой электронов взаимодействует один оптический электрон, спин
+	которого не будем учитывать.
+
+	Соответствующий одноэлектронный гамильтониан запишем как $\vec s \neq 0,~L=0$:
+	\be
+		\label{eq184}
+		\hat{H}_0 = \hat{H}_s + A(\hat{\vec l} \cdot \hat{\vec s});
+	\ee
+
+	Второй член здесь описывает взаимодействие с оптическим электроном.
+
+	Что такое оптический атом? Пусть есть внешняя оболочка со спонтанным спиновым моментом. И пусть на ней есть один активный электрон.
+
+	Спиновое состояние атома будем ситать заданным - т.е.:
+	\be
+		\hat{\vec S} \Rightarrow \langle \hat{\vec S} \rangle = \hat{S};
+	\ee
+
+	Гамильтониан \ref{eq184} описывает поведение оптиеского элеткрона в заданном поле,
+	имеющем симметрию магнитного поля. Сам оператор соответствует релятивистскому 
+	спин-орбитальному взаимодействию.
+
+	В отсутствии спин-орбитального взаимодействия будем считать, чтот основному состоянию $\hat{H}_S$ - соответствует функция $\psi_1$  с $l=0$, а первое возбуждённое состояние 3-ёх кратно вырождено: $\psi_2(l=1, m = -1),~\psi_3(l=1,m=0),
+	\psi_4(l=1,m=1)$.
+
+	Тогда второй слен снимает вырождение с собственных функций начального гамильтониана.
+	Будет такой порядок уровней: $E_1 < E_2 < E_3 < E_4$ (индексы - номера функций).
+	$E_4 - E_3 = E_3 - E_2 = AS$, а с основным состояние расщепление $\hbar \omega_0$.
+
+	Пусть взаимодействие ферромагнитных атомов устанавливает определённый порядок. Мы имеем модель для рассмотрениея оптических свойств ферромагнетика.
+
+	Рассмотрим взаимодействие оптического электрона с полем в дипольном приближении:
+	\be
+		\label{eq185}
+		\hbar{H}_\text{int}(t) = - \hat{\vec d} \vec E(t);
+	\ee
+
+	Если поле гармоническое. То:
+	\be
+		\label{eq186}
+		\hbar{H}_\text{int} = -d_\alpha E_{0\alpha}e^{-i\omega t};
+	\ee
+
+	С учётом этого полный гамильтониан имеет вид:
+	\be
+		\label{eq187}
+		\hat{H} = \hat{H}_\text{int} + \hat{H}_0;
+	\ee
+
+	Матрица плотности в таком слуае подчиняется уравнению:
+	\be
+		\label{eq188}
+		-i\hbar \frac{\pa \rho}{\pa t} = [\hat{H}_\text{int};\hat{\rho}];
+	\ee
+
+	В чем смысл матрицы плотности:
+	\be
+		\psi = \sum c_n \psi_n;
+	\ee
+
+	А дальше мы мереем оператор $\hat A$:
+	\be
+		A_{ij} = \int \psi_i^{*} \hat{A} \psi_j dv; 
+	\ee
+
+	Тогда средее на заданной $\psi$:
+	\be
+		\langle A \rangle = \sum_{ij} c_i^{*} c_{j} A_{ij};
+	\ee
+
+	Но иногда не удается описать таким образом. Например когда происходит
+	взаимодействие с другой системой. Или например можно так учитывать взаимодействие подсистем.
+
+	Ураввнение \ref{eq188} соответствует представлению взаиимодействия. В этом представлении операторы:
+	\be
+		\label{eq189}
+		\hat{A}(t) = e^{i \hat{H}_0 t / \hbar} \hat{A} e^{-i \hat{H}_0 t / \hbar};
+	\ee
+
+	Это шредингеровское представление. Тогда получим выражение для матрицы плотности:
+	\be
+		\label{eq190}
+		\hat{\rho} (t) = \hat{\rho}^{(0)} +\frac{1}{i\hbar}\int_{-\infty}^t
+			[\hat{H}_\text{int};\rho(t_1)] dt_1;
+	\ee
+
+	Здесь мы ситаем то взаимодействие ввечно. $\hat{\rho}^{(0)} = \hat{\rho}(-\infty)$.
+	Тогда в первом приближении:
+	\be
+		\hat{\rho} (t) \approx \hat{\rho}^{(0)} + \hat{\rho}^{(1)}(t);
+	\ee
+
+	Таким образом:
+	\be
+		\label{eq191}
+		\hat{\rho}^{(1)}(t) = \frac{1}{i\hbar} \int_{-\infty}^t
+			[\hat{H}_\text{int};\rho^{(0)}] dt_1;
+	\ee
+
+	Поскольку реь идет про средние по ансамблю (измерений), то в первом приближении возникающий дипольный момент:
+	\be
+		\langle \hat{A} \rangle = \text{Sp}(\hat{\rho}\hat{A});
+	\ee
+
+	Пользуясь таким правилом можно получить:
+	\begin{multline}
+		\langle \hat{d}_\alpha (t) \rangle = \sum_\beta \left(\frac{i}{\hbar}
+		\int_{-\infty}^t \text{Sp}([\hat{d}_\beta(t_1) E_\rho(t_1);
+		\hat{\rho}^{(0)}])\right) dt_1 = \\
+		\sum_{\beta, m, n, k} \frac{i}{\hbar}\int_{-\infty}^t
+		\{\{(d_\beta(t_1))_{mn}(d_\alpha(t_1))_{nm} - (d_\beta(t_1))_{nk}(d_\alpha(t_1))_{kn}\}\rho_{nn}^{(0)} E_\beta(t_1)\} dt_1;
+	\end{multline}
+
+	Здесь $m, n, k$ - индексы матричных элементов. $\alpha,\beta$ - просто координаты.
+	Ненулевые компоненты матриного представления дипольного момента в Шредингеровском представлении:
+	\be
+		(d_x)_{12} = (d_x)_{21} = (d_x)_{14} = (d_x)_{41} = d;
+	\ee
+	\be
+		(d_y)_{12} = - id;~(d_y)_{21} = id;~(dy)_{14} = id;~(d_y)_{41} = -id;
+	\ee
+	\be
+		(d_z) = d';
+	\ee
+
+	Рассмотрим $\alpha  = \beta = x$, тогда:
+	\be
+		\langle d_x(t)\rangle = \sum_{n, m, k} \frac{i}{\hbar}
+		\int_{-\infty}^t \{(d_x(t))_{nm} (d_x(t_1))_{mn} - (d_x(t_1))_{nk} (d_x(t))_{kn}\} \rho_{nn}^{(0)} E_{0x} e^{-i\omega t} dt_1;
+	\ee
+
+	Получим:
+	\begin{multline}
+	\langle d_x(t)\rangle = \frac{i}{\hbar} d^2 E_{0x}\left(
+		(\rho_{11}^{(0)} - \rho_{22}^{(0)})\int_{\infty}^0(
+		e^{i(\omega_{21} + \omega ) \tau} - e^{i(-\omega_{21}+ \omega)\tau}) d\tau\right. + \\ \left.(\rho_{11}^{(0)} - \rho_{44}^{(0)})\int_{\infty}^0(
+			e^{i(\omega_{41} + \omega ) \tau} - e^{i(-\omega_{41}+ \omega)\tau}) d\tau\right) e^{-i\omega t};
+	\end{multline}
+
+	К сожалению эти интегралы расходятся, но можно сделать трюк с бесконечно малым затуханием.
+
+	Формально можно учесть медленное затухание, как:
+	\be
+		E_{0x}e^{-i\omega t} e^{\epsilon t} \Rightarrow \omega \rightarrow \omega + i \epsilon;
+	\ee
+
+	В таком случае ответ будет равным:
+	\be
+		\label{eq195}
+		\langle d_x (t) \rangle = \frac{1}{\hbar} d^2 \left\{
+			(\rho_{11}^{(0)} - \rho_{22}^{(0)})\frac{2\omega_{21}}{\omega_{21}^2 - \omega^2} + (\rho_{11}^{(0)} - \rho_{44}^{(0)})\frac{2\omega_{41}}{\omega_{41}^2 - \omega^2}\right\} E_{0x} e^{-i\omega t};
+	\ee
+
+	При этом это работает, только, когда $\omega \neq \omega_{21},\omega{41}$. Что соответствует
+	отсутствию поглощения.
+\end{document}
