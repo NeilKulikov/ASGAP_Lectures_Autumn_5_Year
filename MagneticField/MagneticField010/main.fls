@@ -240,6 +240,7 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/labx1000.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -248,13 +249,13 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm
 INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm
+INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm
 INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm
-INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField010/main.aux
 INPUT /Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField010/main.out
 INPUT /Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField010/main.out
@@ -268,6 +269,7 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
