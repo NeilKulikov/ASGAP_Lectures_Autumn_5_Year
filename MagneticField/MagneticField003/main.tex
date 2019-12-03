@@ -9,6 +9,8 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
+\usepackage{enumerate}
+%\usepackage{enumitem}
 \usepackage{amssymb, amsmath, amsfonts}
 
 \title{Физика магнитных явлений}
@@ -24,6 +26,8 @@
 \newcommand{\rot}{\textbf{rot}~}
 \renewcommand{\div}{\textbf{div}~}
 \renewcommand{\grad}{\textbf{grad}~}
+
+\newcommand{\mybox}[1]{\fbox{\parbox{1.\textwidth}{#1}}}
 
 \setcounter{equation}{11}
 \setcounter{section}{5}
@@ -246,4 +250,130 @@
 	\begin{tcolorbox}
 		\textbf{Задание:} Каким образом можно вытащить электрон с нижних состояний?
 	\end{tcolorbox}
+
+	\mybox{
+		\textbf{По чужим записям!}
+
+		\section{Релятивистские взаимодействия}
+
+		При переходе в нерелятивистский предел 
+		у нас получается уравнение Паули:
+		\be
+			\hat H = \frac{1}{2m} 
+				\big(\hat{\vec p} - \frac{e}{c}\vec A \big)^2
+				+ e \phi - \underbrace{\frac{e\hbar}{2mc} \hat{\vec \sigma}}_\text{Почти магнитный момент}
+				\vec{\mathcal H} = \hat{H}_\text{P};
+		\ee
+
+		А что будет в следующем приближении?
+		\be
+			\hat H = \hat{H}_\text{P} - \frac{1}{8m^3c^2}
+				\big(\hat{\vec p} - \frac{e}{c}\vec A \big)^4
+				+ \frac{e\hbar^2}{8m^2 c}\grad \phi - 
+				\frac{e \hbar}{4^2 m^2 c^2} \hat{\vec \sigma}
+				\Big[\vec E \times \big(\hat{\vec p} - \frac{e}{c}\vec A \big)\Big] 
+				+ \hdots;
+		\ee
+
+		В случае наличия лишь электростатического поля:
+		\be
+			\label{eq49}
+			\hat H = \frac{\hat{\vec p}^2}{2m} + e \phi - 
+				\frac{\hat{\vec p}^4}{8m^2c^2} + 
+				\frac{e \hbar^2}{8m^2 c^2} \grad \phi - 
+				\underbrace{\frac{e \hbar}{4^2 m^2 c^2} \hat{\vec \sigma}
+				\Big[\vec E \times \hat{\vec p}\Big]}_\text{Спин-орбитальное взаимодействие};
+		\ee	
+
+		Пусть у нас есть центрально-симметричное поле:
+		\be
+			\vec E = - \grad \phi = - \frac{\vec r}{r} \frac{d\Phi(r)}{dr};
+		\ee
+
+		В таком случае член спин-орбитального взаимодействия:
+		\be
+			\label{eq50}
+			-\frac{e \hbar}{4^2 m^2 c^2} \hat{\vec \sigma}
+			\Big[\vec E \times \hat{\vec p}\Big] = 
+			\frac{e \hbar}{4^2 m^2 c^2}
+			\Big[\frac{\vec r}{r} \frac{d\Phi(r)}{dr} \times \hat{\vec p}\Big] =
+			\frac{\hbar}{4^2 m^2 c^2} \frac{1}{r} \frac{dU}{dr} 
+			[\vec r \times \hat{\vec p}] \cdot \hat{\vec \sigma} = 
+			\frac{\hbar^2}{4m^2 c^2} \frac{1}{r} \frac{dU}{dr} 
+			\cdot (\hat{\vec l} \cdot \hat{\vec \sigma});
+		\ee
+
+
+		Оказываются запутанными операторы орбитального момента и спина.
+		Этот член описывает как бы взаимодействие спинового и орбитального движения.
+
+		Рассмотрим систему 2-х электронов и учтём взаимодействие
+		в релятивистском приближении с точностью $(\frac{v}{c})^2$:
+		\be
+			\label{eq51}
+			\hat{H} = \frac{\hat{\vec p}_1^2 + \hat{\vec p}_2^2}{2m}
+			- \frac{\hat{\vec p}_1^2 + \hat{\vec p}_2^2}{8m^3c^2}
+			+ U(\hat{\vec p}_1, \hat{\vec p}_2), \vec r);
+		\ee
+
+		Здесь $\vec r = \vec{r}_1 - \vec{r}_2$, а "потенциал":
+		\begin{multline}
+			\label{eq52}
+			U(\hat{\vec p}_1, \hat{\vec p}_2), \vec r) = 
+				\underbrace{\frac{e^2}{r}}_\text{I} - \pi \big(\frac{e\hbar}{mc}\big)^2 \delta(\vec r)
+				- \underbrace{\frac{e^2}{2m^2 c^2 r} \left(\hat{\vec p}_1\hat{\vec p}_2
+				+\frac{\vec r(\vec r \cdot \hat{\vec p}_1)\hat{\vec p}_2}{r^2}\right)}_\text{II}\\
+				+ \underbrace{\frac{e^2 \hbar}{4m^2c^2 r^3}
+				\left\{-(\hat{\vec \sigma}_1 + 2 \hat{\vec \sigma}_2)
+				\cdot [\vec r \times \hat{\vec p}_1]
+				+ (2\hat{\vec \sigma}_1 + \hat{\vec \sigma}_2)
+				\cdot [\vec r \times \hat{\vec p}_2]\right\}}_\text{III}\\
+				+ \frac{1}{4} \left(\frac{e\hbar}{mc}\right)^2
+				\left\{\underbrace{\frac{\hat{\vec \sigma}_1 \cdot \hat{\vec \sigma}_2}{r^3}
+				- \frac{3(\hat{\vec \sigma}_1\cdot \vec r)
+				(\hat{\vec \sigma}_2\cdot \vec r)}{r^5}}_\text{IV}
+				-\underbrace{\frac{8\pi}{3} (\hat{\vec \sigma}_1 \cdot \hat{\vec \sigma}_2) 
+				\delta(\vec r)}_\text{V}\right\};
+		\end{multline}
+	}
+
+	\mybox{
+		Здесь некоторые члены поддаются интерпретации:
+		\begin{enumerate}[I]
+			\item Взаимодействие по Кулону
+			\item Взаимодействие движужихся заряженных частиц
+			\item Взаимодействие витка с током и магнита
+			\item Взаимодействие 2-х магнитов
+			\item Близкодействующее взаимодействие
+		\end{enumerate}
+
+		\begin{tcolorbox}
+			\textbf{Задача:} Попробовать получить интерпретацию
+			последнего V члена в рамках классической физики.
+		\end{tcolorbox}
+
+		Взаимодействие IV типа орбита-орбита происходит как с собственной,
+		так и с чужой орбитой. Здесь все действует в пространстве
+		простых спиноров.
+
+		Обратимся к рассмотрению именно момента электронной оболочки
+		атома, так как магнитный момент ядра мал. Отвлеччёмся
+		от слабых релятивистских взаимодействий между электронами и с ядром.
+		Оказывается, что кулоновское взаимодействие одного электрона
+		с ядром и остальными электронами можно рассмотреть как
+		взаимодействие с неким самосогласованным полем, которое вдобавок
+		сфериччески симметрично. При этои состояние отдельного электрона
+		в этом приближении можно характеризовать квантовыми числами $n,~l,~m,~S_z$.
+		
+		Так как самосогласованное поле не кулоновское - энергия отдельного
+		электрона зависит как от $l$, так и от $m$. Поэтому корректно
+		указывать все 4-е квантовых числа. Отвлекаясь от релятивистских эффектов
+		высшего порядка можно считать, ччто сохраняется полный момент электронной оболочки,
+		орбитальный момент и спин электрона.
+
+		Сохравнение каждого из этих векторов имеет тот смысл, что возможны
+		состояния, в которых одновременно измеримы модули каждого вектора и его
+		проекции на выделенную ось.
+
+	}
 \end{document}

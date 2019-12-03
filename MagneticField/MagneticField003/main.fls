@@ -189,6 +189,8 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/indentfirst.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/indentfirst.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/enumerate.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -252,6 +254,10 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5
 INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm
 INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm
 INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm0700.tfm
+INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm
+INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/labx0700.tfm
+INPUT /Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/labx0500.tfm
 INPUT /Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.aux
 INPUT /Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.out
 INPUT /Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.out
@@ -267,6 +273,7 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb
