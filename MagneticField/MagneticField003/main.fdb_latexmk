@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1575389368 "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.tex" "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.pdf" "main" 1575389371
+["pdflatex"] 1575389368 "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.tex" "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.pdf" "main" 1575389437
   "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.aux" 1575389371 1857 7fd15ba1ebcb8f2816d5aacd9e771ed2 ""
   "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.tex" 1575389367 18902 79b97d648a5291c21e5ec6e9a1d81721 ""
   "/Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/labx0500.tfm" 1567055680 3320 a430f046d61f34970b99e53711dc6a65 ""
@@ -12,7 +12,7 @@
   "/Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1566316317 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "/Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm" 1566316183 3256 3daaa33cf35cf3f354983aa3214ecd7f ""
   "/Users/neilkulikov/Library/texlive/2019/texmf-var/fonts/tfm/lh/lh-t2a/larm1728.tfm" 1567054652 3252 92d08740ce00199d6cf9ff4aaada81d1 ""
-  "/dev/null" 1575389363 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/dev/null" 1575389418 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1136849721 3141 82d5616418ed8d5de703b3951bedecb4 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -175,9 +175,9 @@
   "main.out" 1575389371 438 b34235be6e38316ab7e0f10b0a747fb5 "pdflatex"
   "main.tex" 1575389367 18902 79b97d648a5291c21e5ec6e9a1d81721 ""
   (generated)
+  "main.aux"
   "main.pdf"
-  "main.out"
   "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.log"
   "/Users/neilkulikov/Documents/lectures_2019_autumn/MagneticField/MagneticField003/main.pdf"
-  "main.aux"
   "main.log"
+  "main.out"
